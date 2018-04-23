@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Algolia Multisite Enabler
-Description: Mu-plugin to enable Algolia plugin to mix-content from multiple WordPress sites in one index.
+Description: Plugin to enable Algolia plugin to mix-content from multiple WordPress sites in one index.
 Version: 0.1.0
 Author: Sebastian Thulin
 Author URI: http://sebastianthulin.se

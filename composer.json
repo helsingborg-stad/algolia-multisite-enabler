@@ -1,0 +1,17 @@
+{
+  "name": "helsingborg-stad/algolia-multisite-enabler",
+  "homepage": "https://github.com/helsingborg-stad/algolia-multisite-enabler",
+  "description": "Plugin to enable Algolia plugin to mix-content from multiple WordPress sites in one index.",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "authors": [
+        {
+            "name": "Sebastian Thulin",
+            "email": "sebastian.thulin@helsingborg.se"
+        }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "composer/installers": "~1.0"
+  }
+}
