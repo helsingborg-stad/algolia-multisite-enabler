@@ -39,6 +39,10 @@ class AlgoliaMultisiteEnabler
         add_filter('algolia_clear_index_if_existing', array($this, 'disableClearIndexOnReindex')); //Disables clear index on re-index
         add_filter('algolia_get_post_object_id', array($this, 'filterPostObjectId'), 10, 3); //Translate post id's to a multisite-unique id
         add_filter('algolia_searchable_post_records', array($this, 'filterSearchablePostRecords'));
+
+        //Add origin site to algolia
+        add_filter('algolia_post_shared_attributes', array($this, 'addOriginSite'), 10, 2);
+        add_filter('algolia_searchable_post_shared_attributes', array($this, 'addOriginSite'), 10, 2);
     }
 
     /**
@@ -96,6 +100,17 @@ class AlgoliaMultisiteEnabler
      */
     public function disableClearIndexOnReindex($state) : bool {
         return false;
+    }
+
+    /**
+     * Add readable origin site to index
+     * @param  [array]  $attributes Default & previously added fields.
+     * @return [bool]   $post
+     */
+    public function addOriginSite($attributes, $post) : array {
+        $attributes['origin_site']      = get_bloginfo('name');
+        $attributes['origin_site_url']  = get_bloginfo('url');
+        return $attributes;
     }
 }
 
